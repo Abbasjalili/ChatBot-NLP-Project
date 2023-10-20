@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    
+}
+
+table, th, td {
+    border: 1px solid black;
+    margin: 1px;
+    padding: 1px;
+}
