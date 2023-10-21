@@ -9,6 +9,9 @@ app.app_context().push()
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key =True)
+    firstname = db.Column(db.String(200), nullable = False)
+    lastname = db.Column(db.String(200), nullable = False)
+    email = db.Column(db.String(200), nullable = False)
     content = db.Column(db.String(200), nullable = False)
     completed = db.Column(db.Integer, default=0)
     date_created =  db.Column(db.DateTime, default= datetime.utcnow)
@@ -23,8 +26,11 @@ class Todo(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
+        task_firstname = request.form['firstname']
+        task_lastname = request.form['lastname']
+        task_email = request.form['email']
         task_content = request.form['content']
-        new_task = Todo(content=task_content)
+        new_task = Todo(firstname= task_firstname, lastname=task_lastname,email=task_email, content=task_content)
         
         try:
             db.session.add(new_task)

@@ -15,7 +15,7 @@ table, td, th {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 200%;
 }
 
 th {
@@ -38,3 +38,9 @@ td {
 h1 {
     text-align: center;
 }
+
+label {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+}​

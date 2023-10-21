@@ -12,12 +12,18 @@
     {% else %}
     <table>
         <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
             <th>Task</th>
             <th>Added</th>
             <th>Actions</th>
         </tr>
         {% for task in tasks %}
             <tr>
+                <td>{{ task.firstname }}</td>
+                <td>{{ task.lastname }}</td>
+                <td>{{ task.email }}</td>
                 <td>{{ task.content }}</td>
                 <td>{{ task.date_created.date() }}</td>
                 <td>
@@ -32,6 +38,13 @@
 
     <div class="form">
         <form action="/" method="POST">
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" id="firstname">
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" id="lastname">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+            <label for="content">Type Here:</label>
             <input type="text" name="content" id="content">
             <input type="submit" value="Add Task">
         </form>
