@@ -29,6 +29,8 @@ td {
 
 .form {
     margin-top: 20px;
+    padding: 5px;
+    padding-top: 50px;
 }
 
 #content {
@@ -43,4 +45,4 @@ label {
     display: inline-block;
     width: 140px;
     text-align: right;
-}​
+}
